@@ -9,7 +9,7 @@ SELECT
     END AS clasificacion_deuda_final
 FROM 
     ClasificacionDeuda cd
-WHERE cd.corte_mes <= '2025-01-27' -- Puede ser cualquier fecha
+WHERE cd.corte_mes <= '2025-01-30' OR cd.corte_mes <= CURRENT_DATE() -- Puede ser cualquier fecha
     ),
 Rachas AS (
     SELECT 
