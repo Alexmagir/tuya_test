@@ -72,12 +72,12 @@ Esta solución identifica y clasifica las rachas de consumo de los clientes.
 
 Para ejecutar esta solución, se debe tener una base de datos disponible en **SQLite** o **MySQL**. Sigue estos pasos en orden desde la carpeta `streaks`:
 
-1.  **Crear tablas**: ejecutar las queries `tables.slq` para crear las tablas necesarias en la base de datos.
+1.  **Crear tablas**: ejecutar las queries `tables.sql` para crear las tablas necesarias en la base de datos.
 
 2.  **Cargar datos**: ejecutar las queries `table_loading.sql` para cargar los datos desde los archivos Excel ubicados en la carpeta `excel data`.
 
 3.  **Clasificar**: ejecutar las queries `classification.sql` para clasificar a los clientes segun los niveles de deuda.
 
-4.  **Identificar rachas**: ejecutar el script `streaks.py` para identificar las rachas de un cliente dentro de un nivel de deuda. Permite modificar fecha base y número de rachas.
+4.  **Identificar rachas**: ejecutar las queries `streaks.sql` para identificar las rachas de un cliente dentro de un nivel de deuda. Permite modificar fecha base y número de rachas.
 
 Al ejecutar las queries de clasificación y de rachas en diferentes espacios se garantiza un flujo en la transformación, si no se hace con vistas, deberían ejecutarse en el mismo espacio y no habrá ningún conflicto entre las subqueries.
