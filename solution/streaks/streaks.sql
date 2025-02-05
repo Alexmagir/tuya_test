@@ -18,8 +18,8 @@ Rachas AS (
         d.saldo,
         d.nivel_deuda_final,
         ROW_NUMBER() OVER (PARTITION BY d.identificacion ORDER BY d.corte_mes) -
-        ROW_NUMBER() OVER (PARTITION BY d.identificacion, d.nivel_deuda_final ORDER BY d.corte_mes) AS grupo_racha,
-        ROW_NUMBER() OVER (PARTITION BY d.identificacion, d.nivel_deuda_final, grupo_racha ORDER BY d.corte_mes DESC) AS rn
+        ROW_NUMBER() OVER (PARTITION BY d.identificacion, d.clasificacion_deuda_final ORDER BY d.corte_mes) AS grupo_racha,
+        ROW_NUMBER() OVER (PARTITION BY d.identificacion, d.clasificacion_deuda_final, grupo_racha ORDER BY d.corte_mes DESC) AS rn
     FROM 
         deuda d
 ),
